@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ListingDeliveryUnit;
+use App\Models\ListingDeliveryUnit as Model;
 use Illuminate\Http\Request;
 
 class ListingDeliveryUnitController extends Controller
@@ -14,7 +14,9 @@ class ListingDeliveryUnitController extends Controller
      */
     public function index()
     {
-        //
+        $list = Model::orderBy('id', 'DESC')
+            ->paginate(10);
+        return view('backend.realstate.deliveryunits.index', compact('list'));
     }
 
     /**
@@ -44,7 +46,7 @@ class ListingDeliveryUnitController extends Controller
      * @param  \App\Models\ListingDeliveryUnit  $listingDeliveryUnit
      * @return \Illuminate\Http\Response
      */
-    public function show(ListingDeliveryUnit $listingDeliveryUnit)
+    public function show($id)
     {
         //
     }
@@ -55,7 +57,7 @@ class ListingDeliveryUnitController extends Controller
      * @param  \App\Models\ListingDeliveryUnit  $listingDeliveryUnit
      * @return \Illuminate\Http\Response
      */
-    public function edit(ListingDeliveryUnit $listingDeliveryUnit)
+    public function edit($id)
     {
         //
     }
@@ -67,7 +69,7 @@ class ListingDeliveryUnitController extends Controller
      * @param  \App\Models\ListingDeliveryUnit  $listingDeliveryUnit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ListingDeliveryUnit $listingDeliveryUnit)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,7 +80,7 @@ class ListingDeliveryUnitController extends Controller
      * @param  \App\Models\ListingDeliveryUnit  $listingDeliveryUnit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ListingDeliveryUnit $listingDeliveryUnit)
+    public function destroy($id)
     {
         //
     }

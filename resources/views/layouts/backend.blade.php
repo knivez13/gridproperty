@@ -47,31 +47,31 @@
                         <div class="collapse" id="sidebarDashboards">
                             <ul class="side-nav-second-level">
                                 <li>
-                                    <a href="dashboard-analytics.html">Agent Properties</a>
+                                    <a href="{{ route('aminity.index') }}">Aminity</a>
                                 </li>
                                 <li>
-                                    <a href="dashboard-analytics.html">My Properties</a>
+                                    <a href="{{ route('nearlocation.index') }}">Near Location</a>
                                 </li>
                                 <li>
-                                    <a href="dashboard-analytics.html">Property Purpose</a>
+                                    <a href="{{ route('propertytype.index') }}">Property Type</a>
                                 </li>
                                 <li>
-                                    <a href="dashboard-analytics.html">Property Type</a>
+                                    <a href="{{ route('deliveryunits.index') }}">Delivery Units</a>
                                 </li>
                                 <li>
-                                    <a href="dashboard-analytics.html">Nearest Location</a>
+                                    <a href="{{ route('priority.index') }}">Priority</a>
                                 </li>
                                 <li>
-                                    <a href="dashboard-analytics.html">Aminities</a>
+                                    <a href="{{ route('priorityunder.index') }}">Priority Under</a>
                                 </li>
                                 <li>
-                                    <a href="dashboard-analytics.html">Agents</a>
+                                    <a href="{{ route('status.index') }}">Status</a>
                                 </li>
                                 <li>
-                                    <a href="dashboard-analytics.html">Orders</a>
+                                    <a href="{{ route('listing.index') }}">Listing Category</a>
                                 </li>
                                 <li>
-                                    <a href="dashboard-analytics.html">Reviews</a>
+                                    <a href="{{ route('listingtype.index') }}">Listing Type</a>
                                 </li>
                             </ul>
                         </div>
@@ -100,7 +100,8 @@
                                     <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <span class="account-position">Welcome</span>
+                                    <span class="account-user-name">{{ Auth::user()->name }}</span>
+                                    <span class="account-position">Founder</span>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">

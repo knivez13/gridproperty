@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NearestLocation;
+use App\Models\NearestLocation as Model;
 use Illuminate\Http\Request;
 
 class NearestLocationController extends Controller
@@ -14,7 +14,9 @@ class NearestLocationController extends Controller
      */
     public function index()
     {
-        //
+        $list = Model::orderBy('id', 'DESC')
+            ->paginate(10);
+        return view('backend.realstate.nearlocation.index', compact('list'));
     }
 
     /**
@@ -44,7 +46,7 @@ class NearestLocationController extends Controller
      * @param  \App\Models\NearestLocation  $nearestLocation
      * @return \Illuminate\Http\Response
      */
-    public function show(NearestLocation $nearestLocation)
+    public function show($id)
     {
         //
     }
@@ -55,7 +57,7 @@ class NearestLocationController extends Controller
      * @param  \App\Models\NearestLocation  $nearestLocation
      * @return \Illuminate\Http\Response
      */
-    public function edit(NearestLocation $nearestLocation)
+    public function edit($id)
     {
         //
     }
@@ -67,7 +69,7 @@ class NearestLocationController extends Controller
      * @param  \App\Models\NearestLocation  $nearestLocation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, NearestLocation $nearestLocation)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,7 +80,7 @@ class NearestLocationController extends Controller
      * @param  \App\Models\NearestLocation  $nearestLocation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(NearestLocation $nearestLocation)
+    public function destroy($id)
     {
         //
     }

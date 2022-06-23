@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PropertyType;
+use App\Models\PropertyType as Model;
 use Illuminate\Http\Request;
 
 class PropertyTypeController extends Controller
@@ -14,7 +14,9 @@ class PropertyTypeController extends Controller
      */
     public function index()
     {
-        //
+        $list = Model::orderBy('id', 'DESC')
+            ->paginate(10);
+        return view('backend.realstate.propertytype.index', compact('list'));
     }
 
     /**
@@ -44,7 +46,7 @@ class PropertyTypeController extends Controller
      * @param  \App\Models\PropertyType  $propertyType
      * @return \Illuminate\Http\Response
      */
-    public function show(PropertyType $propertyType)
+    public function show($id)
     {
         //
     }
@@ -55,7 +57,7 @@ class PropertyTypeController extends Controller
      * @param  \App\Models\PropertyType  $propertyType
      * @return \Illuminate\Http\Response
      */
-    public function edit(PropertyType $propertyType)
+    public function edit($id)
     {
         //
     }
@@ -67,7 +69,7 @@ class PropertyTypeController extends Controller
      * @param  \App\Models\PropertyType  $propertyType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PropertyType $propertyType)
+    public function update(Request $request,$id)
     {
         //
     }
@@ -78,7 +80,7 @@ class PropertyTypeController extends Controller
      * @param  \App\Models\PropertyType  $propertyType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PropertyType $propertyType)
+    public function destroy($id)
     {
         //
     }

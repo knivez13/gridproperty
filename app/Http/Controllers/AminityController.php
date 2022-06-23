@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Aminity;
+use App\Models\Aminity as Model;
 use Illuminate\Http\Request;
 
 class AminityController extends Controller
@@ -14,7 +14,9 @@ class AminityController extends Controller
      */
     public function index()
     {
-        //
+        $list = Model::orderBy('id', 'DESC')
+            ->paginate(10);
+        return view('backend.realstate.aminity.index', compact('list'));
     }
 
     /**
@@ -44,7 +46,7 @@ class AminityController extends Controller
      * @param  \App\Models\Aminity  $aminity
      * @return \Illuminate\Http\Response
      */
-    public function show(Aminity $aminity)
+    public function show($id)
     {
         //
     }
@@ -55,7 +57,7 @@ class AminityController extends Controller
      * @param  \App\Models\Aminity  $aminity
      * @return \Illuminate\Http\Response
      */
-    public function edit(Aminity $aminity)
+    public function edit($id)
     {
         //
     }
@@ -67,7 +69,7 @@ class AminityController extends Controller
      * @param  \App\Models\Aminity  $aminity
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Aminity $aminity)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,7 +80,7 @@ class AminityController extends Controller
      * @param  \App\Models\Aminity  $aminity
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Aminity $aminity)
+    public function destroy($id)
     {
         //
     }

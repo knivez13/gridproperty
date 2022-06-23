@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-12">
         <div class="page-title-box">
-            <h4 class="page-title">Property List Tables</h4>
+            <h4 class="page-title">Delivery Unit List Tables</h4>
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
                         </div>
                     </div><!-- end col-->
                 </div>
-                @include('backend.property.list')
+                @include('backend.realstate.deliveryunits.list')
             </div>
             @if (Session::has('success'))
             <div class="alert alert-success text-sm" role="alert">

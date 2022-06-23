@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ListingType;
+use App\Models\ListingType as Model;
 use Illuminate\Http\Request;
 
 class ListingTypeController extends Controller
@@ -14,7 +14,9 @@ class ListingTypeController extends Controller
      */
     public function index()
     {
-        //
+        $list = Model::orderBy('id', 'DESC')
+            ->paginate(10);
+        return view('backend.realstate.listingtype.index', compact('list'));
     }
 
     /**
@@ -44,7 +46,7 @@ class ListingTypeController extends Controller
      * @param  \App\Models\ListingType  $listingType
      * @return \Illuminate\Http\Response
      */
-    public function show(ListingType $listingType)
+    public function show($id)
     {
         //
     }
@@ -55,7 +57,7 @@ class ListingTypeController extends Controller
      * @param  \App\Models\ListingType  $listingType
      * @return \Illuminate\Http\Response
      */
-    public function edit(ListingType $listingType)
+    public function edit($id)
     {
         //
     }
@@ -67,7 +69,7 @@ class ListingTypeController extends Controller
      * @param  \App\Models\ListingType  $listingType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ListingType $listingType)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,7 +80,7 @@ class ListingTypeController extends Controller
      * @param  \App\Models\ListingType  $listingType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ListingType $listingType)
+    public function destroy($id)
     {
         //
     }

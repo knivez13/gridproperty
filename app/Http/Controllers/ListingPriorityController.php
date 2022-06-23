@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ListingPriority;
+use App\Models\ListingPriority as Model;
 use Illuminate\Http\Request;
 
 class ListingPriorityController extends Controller
@@ -14,7 +14,9 @@ class ListingPriorityController extends Controller
      */
     public function index()
     {
-        //
+        $list = Model::orderBy('id', 'DESC')
+            ->paginate(10);
+        return view('backend.realstate.priority.index', compact('list'));
     }
 
     /**
@@ -44,7 +46,7 @@ class ListingPriorityController extends Controller
      * @param  \App\Models\ListingPriority  $listingPriority
      * @return \Illuminate\Http\Response
      */
-    public function show(ListingPriority $listingPriority)
+    public function show($id)
     {
         //
     }
@@ -55,7 +57,7 @@ class ListingPriorityController extends Controller
      * @param  \App\Models\ListingPriority  $listingPriority
      * @return \Illuminate\Http\Response
      */
-    public function edit(ListingPriority $listingPriority)
+    public function edit($id)
     {
         //
     }
@@ -67,7 +69,7 @@ class ListingPriorityController extends Controller
      * @param  \App\Models\ListingPriority  $listingPriority
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ListingPriority $listingPriority)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,7 +80,7 @@ class ListingPriorityController extends Controller
      * @param  \App\Models\ListingPriority  $listingPriority
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ListingPriority $listingPriority)
+    public function destroy($id)
     {
         //
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ListingStatus;
+use App\Models\ListingStatus as Model;
 use Illuminate\Http\Request;
 
 class ListingStatusController extends Controller
@@ -14,7 +14,9 @@ class ListingStatusController extends Controller
      */
     public function index()
     {
-        //
+        $list = Model::orderBy('id', 'DESC')
+            ->paginate(10);
+        return view('backend.realstate.status.index', compact('list'));
     }
 
     /**
@@ -44,7 +46,7 @@ class ListingStatusController extends Controller
      * @param  \App\Models\ListingStatus  $listingStatus
      * @return \Illuminate\Http\Response
      */
-    public function show(ListingStatus $listingStatus)
+    public function show($id)
     {
         //
     }
@@ -55,7 +57,7 @@ class ListingStatusController extends Controller
      * @param  \App\Models\ListingStatus  $listingStatus
      * @return \Illuminate\Http\Response
      */
-    public function edit(ListingStatus $listingStatus)
+    public function edit($id)
     {
         //
     }
@@ -67,7 +69,7 @@ class ListingStatusController extends Controller
      * @param  \App\Models\ListingStatus  $listingStatus
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ListingStatus $listingStatus)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,7 +80,7 @@ class ListingStatusController extends Controller
      * @param  \App\Models\ListingStatus  $listingStatus
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ListingStatus $listingStatus)
+    public function destroy($id)
     {
         //
     }
