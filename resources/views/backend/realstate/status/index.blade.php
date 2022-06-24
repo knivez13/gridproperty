@@ -14,7 +14,7 @@
             <div class="card-body">
                 <div class="row mb-2">
                     <div class="col-sm-7">
-                        <a href="{{ route('property.create') }}" class="btn btn-outline-info mb-2"><i class="mdi mdi-plus-circle me-2"></i>Create</a>
+                        <a href="{{ route('status.create') }}" class="btn btn-outline-info mb-2"><i class="mdi mdi-plus-circle me-2"></i>Create</a>
                     </div>
                     <div class="col-sm-5">
                         <div class="input-group text-sm-end">

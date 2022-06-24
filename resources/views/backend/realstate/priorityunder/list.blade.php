@@ -10,7 +10,6 @@
         </thead>
         <tbody>
             @foreach ($list as $data)
-            {{$list}}
             <tr>
                 <td>{{ $data->id }}</td>
                 <td>{{ $data->name }}</td>

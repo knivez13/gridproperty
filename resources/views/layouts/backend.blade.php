@@ -35,7 +35,7 @@
                     </li>
                     <li class="side-nav-item">
                         <a href="{{ route('property.index') }}" class="side-nav-link">
-                            <i class="uil-dashboard"></i>
+                            <i class="uil-building"></i>
                             <span>Property</span>
                         </a>
                     </li>
