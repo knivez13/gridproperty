@@ -43,6 +43,7 @@
                         <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                             <i class="uil-home-alt"></i>
                             <span> Real State </span>
+                            <span class="menu-arrow"></span>
                         </a>
                         <div class="collapse" id="sidebarDashboards">
                             <ul class="side-nav-second-level">
@@ -72,6 +73,23 @@
                                 </li>
                                 <li>
                                     <a href="{{ route('listingtype.index') }}">Listing Type</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarUserManagement" aria-expanded="false" aria-controls="sidebarUserManagement" class="side-nav-link">
+                            <i class="uil-users-alt"></i>
+                            <span> User Management</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarUserManagement">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="{{ route('user.index') }}">User</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('role.index') }}">Roles</a>
                                 </li>
                             </ul>
                         </div>

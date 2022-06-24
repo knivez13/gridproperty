@@ -42,13 +42,13 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        $listing = Listing::pluck('name', 'name')->all();
-        $deliveryunit = ListingDeliveryUnit::pluck('name', 'name')->all();
-        $priority = ListingPriority::pluck('name', 'name')->all();
-        $priorityunder = ListingPriorityUnder::pluck('name', 'name')->all();
-        $type = ListingType::pluck('name', 'name')->all();
-        $status = ListingStatus::pluck('name', 'name')->all();
-        $propertytype = PropertyType::pluck('name', 'name')->all();
+        $listing = Listing::where('status', '1')->pluck('name', 'name')->all();
+        $deliveryunit = ListingDeliveryUnit::where('status', '1')->pluck('name', 'name')->all();
+        $priority = ListingPriority::where('status', '1')->pluck('name', 'name')->all();
+        $priorityunder = ListingPriorityUnder::where('status', '1')->pluck('name', 'name')->all();
+        $type = ListingType::where('status', '1')->pluck('name', 'name')->all();
+        $status = ListingStatus::where('status', '1')->pluck('name', 'name')->all();
+        $propertytype = PropertyType::where('status', '1')->pluck('name', 'name')->all();
         return view('backend.property.create', compact('listing', 'deliveryunit', 'priority', 'priorityunder', 'type', 'status', 'status', 'propertytype'));
     }
 
@@ -151,13 +151,13 @@ class PropertyController extends Controller
             ->with('priorityunder')
             ->with('status')
             ->find($id);
-        $listing = Listing::pluck('name', 'name')->all();
-        $deliveryunit = ListingDeliveryUnit::pluck('name', 'name')->all();
-        $priority = ListingPriority::pluck('name', 'name')->all();
-        $priorityunder = ListingPriorityUnder::pluck('name', 'name')->all();
-        $type = ListingType::pluck('name', 'name')->all();
-        $status = ListingStatus::pluck('name', 'name')->all();
-        $propertytype = PropertyType::pluck('name', 'name')->all();
+        $listing = Listing::where('status', '1')->pluck('name', 'name')->all();
+        $deliveryunit = ListingDeliveryUnit::where('status', '1')->pluck('name', 'name')->all();
+        $priority = ListingPriority::where('status', '1')->pluck('name', 'name')->all();
+        $priorityunder = ListingPriorityUnder::where('status', '1')->pluck('name', 'name')->all();
+        $type = ListingType::where('status', '1')->pluck('name', 'name')->all();
+        $status = ListingStatus::where('status', '1')->pluck('name', 'name')->all();
+        $propertytype = PropertyType::where('status', '1')->pluck('name', 'name')->all();
         return view('backend.property.edit', compact('listing', 'deliveryunit', 'priority', 'priorityunder', 'type', 'status', 'status', 'propertytype', 'data'));
     }
 

@@ -8,6 +8,14 @@ use Auth;
 
 class ListingStatusController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:property-status-list', ['only' => ['index']]);
+        $this->middleware('permission:property-status-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:property-status-edit', ['only' => ['edit', 'update']]);
+    }
+
     public function index()
     {
         $list = Model::orderBy('id', 'DESC')

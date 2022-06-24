@@ -9,6 +9,14 @@ use Auth;
 
 class ListingPriorityController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:priority-list', ['only' => ['index']]);
+        $this->middleware('permission:priority-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:priority-edit', ['only' => ['edit', 'update']]);
+    }
+
     public function index()
     {
         $list = Model::orderBy('id', 'DESC')

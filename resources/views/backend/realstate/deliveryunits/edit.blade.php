@@ -29,7 +29,7 @@
                 <div class="mb-3 col-md-4">
                     <div class="form-floating">
                         {!! Form::select('status', ['' => 'Select','1' => 'Active','0' => 'Inactive'] , $data->status, ['class' => 'form-select' ,'id' => 'floatingSelect','aria-label' => 'Floating label select example', 'required' ]) !!}
-                        <label for="floatingSelect">Staus<i style="color:red;">*</i></label>
+                        <label for="floatingSelect">Status<i style="color:red;">*</i></label>
                     </div>
                 </div>
                 <div class="mb-0 col-md-6">

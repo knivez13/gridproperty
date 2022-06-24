@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-12">
         <div class="page-title-box">
-            <h4 class="page-title">Create Listing Category</h4>
+            <h4 class="page-title">Create Aminity</h4>
         </div>
     </div>
 </div>
@@ -19,7 +19,7 @@
                 @endif
                 <h4 class="header-title">Information</h4>
                 <hr>
-                {!! Form::open(['route' => 'listing.store', 'method' => 'POST']) !!}
+                {!! Form::open(['route' => 'aminity.store', 'method' => 'POST']) !!}
                 <div class="mb-3 col-md-4">
                     <div class="form-floating">
                         {!! Form::text('name', null, ['id' => 'floatingInputGrid', 'class' => 'form-control' , 'required']) !!}
@@ -29,13 +29,13 @@
                 <div class="mb-3 col-md-4">
                     <div class="form-floating">
                         {!! Form::select('status', ['' => 'Select','1' => 'Active','0' => 'Inactive'] , null, ['class' => 'form-select' ,'id' => 'floatingSelect','aria-label' => 'Floating label select example', 'required' ]) !!}
-                        <label for="floatingSelect">Status<i style="color:red;">*</i></label>
+                        <label for="floatingSelect">Staus<i style="color:red;">*</i></label>
                     </div>
                 </div>
 
                 <div class="mb-0 col-md-6">
                     <button class="btn btn-outline-info mb-2">Save</button>
-                    <a href="{{ route('listing.index') }}" class="btn btn-outline-danger mb-2">Cancel</a>
+                    <a href="{{ route('aminity.index') }}" class="btn btn-outline-danger mb-2">Cancel</a>
                 </div>
                 {!! Form::close() !!}
             </div>

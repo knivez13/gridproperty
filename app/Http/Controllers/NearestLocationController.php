@@ -9,6 +9,14 @@ use Auth;
 
 class NearestLocationController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:near-location-list', ['only' => ['index']]);
+        $this->middleware('permission:near-location-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:near-location-edit', ['only' => ['edit', 'update']]);
+    }
+
     public function index()
     {
         $list = Model::orderBy('id', 'DESC')

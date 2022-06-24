@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(DefaultDataSeeder::class);
+        $this->call(PermissionTableSeeder::class);
+        $this->call(CreateAdminUserSeeder::class);
     }
 }

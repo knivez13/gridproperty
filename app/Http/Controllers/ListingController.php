@@ -9,6 +9,13 @@ use Auth;
 
 class ListingController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:property-listing-list', ['only' => ['index']]);
+        $this->middleware('permission:property-listing-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:property-listing-edit', ['only' => ['edit', 'update']]);
+    }
+
     public function index()
     {
         $list = Model::orderBy('id', 'DESC')

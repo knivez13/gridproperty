@@ -9,6 +9,14 @@ use Auth;
 
 class ListingTypeController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:listing-type-list', ['only' => ['index']]);
+        $this->middleware('permission:listing-type-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:listing-type-edit', ['only' => ['edit', 'update']]);
+    }
+
     public function index()
     {
         $list = Model::orderBy('id', 'DESC')

@@ -19,11 +19,11 @@ Route::get('/', function () {
 
 Auth::routes(['reset' => false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('property', App\Http\Controllers\PropertyController::class)->except(['destroy']);
-    Route::prefix('realstate')->group(function () {
+    Route::prefix('real-state')->group(function () {
         Route::resource('aminity', App\Http\Controllers\AminityController::class)->except(['destroy','show']);
         Route::resource('nearlocation', App\Http\Controllers\NearestLocationController::class)->except(['destroy','show']);
         Route::resource('propertytype', App\Http\Controllers\PropertyTypeController::class)->except(['destroy','show']);
@@ -33,5 +33,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::resource('priorityunder', App\Http\Controllers\ListingPriorityUnderController::class)->except(['destroy','show']);
         Route::resource('listingtype', App\Http\Controllers\ListingTypeController::class)->except(['destroy','show']);
         Route::resource('listing', App\Http\Controllers\ListingController::class)->except(['destroy','show']);
+    });
+    Route::prefix('user-management')->group(function () {
+        Route::resource('role', App\Http\Controllers\RoleController::class)->except(['destroy','show']);
+        Route::resource('user', App\Http\Controllers\UserController::class)->except(['destroy','show']);
     });
 });

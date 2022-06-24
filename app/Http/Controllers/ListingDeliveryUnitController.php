@@ -9,6 +9,14 @@ use Auth;
 
 class ListingDeliveryUnitController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:delivery-units-list', ['only' => ['index']]);
+        $this->middleware('permission:delivery-units-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:delivery-units-edit', ['only' => ['edit', 'update']]);
+    }
+
     public function index()
     {
         $list = Model::orderBy('id', 'DESC')

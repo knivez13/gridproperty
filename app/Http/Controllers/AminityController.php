@@ -8,6 +8,12 @@ use Auth;
 
 class AminityController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:aminity-list', ['only' => ['index']]);
+        $this->middleware('permission:aminity-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:aminity-edit', ['only' => ['edit', 'update']]);
+    }
 
     public function index()
     {

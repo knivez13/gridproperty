@@ -9,6 +9,14 @@ use Auth;
 
 class PropertyTypeController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:property-type-list', ['only' => ['index']]);
+        $this->middleware('permission:property-type-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:property-type-edit', ['only' => ['edit', 'update']]);
+    }
+
     public function index()
     {
         $list = Model::orderBy('id', 'DESC')
