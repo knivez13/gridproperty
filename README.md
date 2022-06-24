@@ -1,5 +1,5 @@
-composer install
-setup database on .env file
-php artisan key:generate
-php artisan migrate:refresh --seed
-php artisan serve
+composer install <br />
+setup database on .env file<br />
+php artisan key:generate<br />
+php artisan migrate:refresh --seed<br />
+php artisan serve<br />
